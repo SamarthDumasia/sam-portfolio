@@ -1,9 +1,9 @@
 // src/components/Navbar.jsx
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import './navbar.css';
+import './Navbar.css';
 
-const navbar = ({ 
+const Navbar = ({ 
   scrollToHome, 
   scrollToAbout, 
   scrollToEducation, 
@@ -38,4 +38,4 @@ const navbar = ({
   );
 };
 
-export default navbar;
+export default Navbar;

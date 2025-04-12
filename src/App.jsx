@@ -1,7 +1,7 @@
 // src/App.jsx
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from './components/Navbar';  // Remove .jsx extension
+import Navbar from './components/Navbar';
 import ThemeToggle from './components/ThemeToggle';
 import Home from './sections/Home';
 import About from './sections/About';
@@ -9,7 +9,7 @@ import Education from './sections/Education';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
-import { ThemeProvider } from './context/ThemeContext';
+import { ThemeContext } from './context/ThemeContext';
 import './App.css';
 
 function App() {

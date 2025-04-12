@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import './Navbar';
+import './navbar.css';  // Update CSS import
 
 const Navbar = ({ 
   scrollToHome, 
@@ -38,4 +38,4 @@ const Navbar = ({
   );
 };
 
-export default Navbar;  // Changed from 'navbar' to 'Navbar'
+export default navbar;

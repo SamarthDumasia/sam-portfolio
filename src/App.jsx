@@ -1,14 +1,14 @@
 // src/App.jsx
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from './components/Navbar'; // Add .jsx extension
-import ThemeToggle from './components/ThemeToggle';
-import Home from './sections/Home';
-import About from './sections/About';
-import Education from './sections/Education';
-import Experience from './sections/Experience';
-import Projects from './sections/Projects';
-import Contact from './sections/Contact';
+import Navbar from './components/navbar.jsx';  // Add .jsx extension
+import ThemeToggle from './components/ThemeToggle.jsx';
+import Home from './sections/Home.jsx';
+import About from './sections/About.jsx';
+import Education from './sections/Education.jsx';
+import Experience from './sections/Experience.jsx';
+import Projects from './sections/Projects.jsx';
+import Contact from './sections/Contact.jsx';
 import { ThemeContext } from './context/ThemeContext';
 import './App.css';
 

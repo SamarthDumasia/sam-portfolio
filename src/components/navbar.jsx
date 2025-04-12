@@ -38,4 +38,4 @@ const Navbar = ({
   );
 };
 
-export default navbar;
+export default Navbar;  // Changed from 'navbar' to 'Navbar'

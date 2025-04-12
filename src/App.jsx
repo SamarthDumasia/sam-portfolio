@@ -1,7 +1,7 @@
 // src/App.jsx
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar.jsx';  // Add .jsx extension
 import ThemeToggle from './components/ThemeToggle';
 import Home from './sections/Home';
 import About from './sections/About';

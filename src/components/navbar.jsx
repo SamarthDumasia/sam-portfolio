@@ -14,22 +14,15 @@ const Navbar = ({
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, darkMode } = useContext(ThemeContext);
+  const { darkMode } = useContext(ThemeContext);
 
-  // Handle scroll event to change navbar style
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMenu = () => {
@@ -44,8 +37,8 @@ const Navbar = ({
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <div           className="navbar-brand">
-          <a href="#"           onClick={scrollToHome} className="navbar-title">
+        <div className="navbar-brand">
+          <a href="#" onClick={scrollToHome} className="navbar-title">
             Samarth Dumasia
           </a>
         </div>
@@ -56,22 +49,58 @@ const Navbar = ({
 
         <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
           <li className="nav-item">
-            <span className="nav-link" onClick={scrollToHome}>Home</span>
+            <motion.span 
+              className="nav-link" 
+              onClick={() => handleNavClick(scrollToHome)}
+              whileHover={{ scale: 1.1 }}
+            >
+              Home
+            </motion.span>
           </li>
           <li className="nav-item">
-            <span className="nav-link" onClick={scrollToAbout}>About</span>
+            <motion.span 
+              className="nav-link" 
+              onClick={() => handleNavClick(scrollToAbout)}
+              whileHover={{ scale: 1.1 }}
+            >
+              About
+            </motion.span>
           </li>
           <li className="nav-item">
-            <span className="nav-link" onClick={scrollToEducation}>Education</span>
+            <motion.span 
+              className="nav-link" 
+              onClick={() => handleNavClick(scrollToEducation)}
+              whileHover={{ scale: 1.1 }}
+            >
+              Education
+            </motion.span>
           </li>
           <li className="nav-item">
-            <span className="nav-link" onClick={scrollToExperience}>Experience</span>
+            <motion.span 
+              className="nav-link" 
+              onClick={() => handleNavClick(scrollToExperience)}
+              whileHover={{ scale: 1.1 }}
+            >
+              Experience
+            </motion.span>
           </li>
           <li className="nav-item">
-            <span className="nav-link" onClick={scrollToProjects}>Projects</span>
+            <motion.span 
+              className="nav-link" 
+              onClick={() => handleNavClick(scrollToProjects)}
+              whileHover={{ scale: 1.1 }}
+            >
+              Projects
+            </motion.span>
           </li>
           <li className="nav-item">
-            <span className="nav-link" onClick={scrollToContact}>Contact</span>
+            <motion.span 
+              className="nav-link" 
+              onClick={() => handleNavClick(scrollToContact)}
+              whileHover={{ scale: 1.1 }}
+            >
+              Contact
+            </motion.span>
           </li>
         </ul>
       </div>

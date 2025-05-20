@@ -1,15 +1,15 @@
 // src/App.jsx
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from "./components/navbar";
-import ThemeToggle from './components/ThemeToggle.jsx';
-import Home from './sections/Home.jsx';
-import About from './sections/About.jsx';
-import Education from './sections/Education.jsx';
-import Experience from './sections/Experience.jsx';
-import Projects from './sections/Projects.jsx';
-import Contact from './sections/Contact.jsx';
-import { ThemeContext } from './context/ThemeContext';
+import Navbar from "./components/Navbar"; // Fix casing and remove .jsx
+import ThemeToggle from './components/ThemeToggle';
+import Home from './sections/Home';
+import About from './sections/About';
+import Education from './sections/Education';
+import Experience from './sections/Experience';
+import Projects from './sections/Projects';
+import Contact from './sections/Contact';
+import { ThemeProvider } from './context/ThemeContext'; // Add ThemeProvider
 import './App.css';
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="App">
+      <div className="App" data-theme="light">
         <Navbar 
           scrollToHome={() => scrollToSection(homeRef)}
           scrollToAbout={() => scrollToSection(aboutRef)}

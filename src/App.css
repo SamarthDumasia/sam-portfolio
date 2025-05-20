@@ -38,10 +38,8 @@ body {
 
 .App {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s ease;
-  background-color: var(--bg-light);
+  width: 100%;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Section styling */
@@ -62,7 +60,6 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: all 0.3s ease;
 }
 
 div[ref] {
@@ -146,8 +143,8 @@ section:nth-child(odd) {
 
 /* Light theme styles */
 [data-theme='light'] {
-  background-color: var(--bg-light);
-  color: var(--text-light);
+  background-color: #ffffff;
+  color: #333333;
 }
 
 [data-theme='light'] .section {
@@ -168,7 +165,7 @@ section:nth-child(odd) {
 }
 
 [data-theme='light'] .navbar {
-  background-color: rgba(240, 248, 255, 0.9);
+  background-color: rgba(240, 248, 255, 0.97);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-light);
 }
@@ -188,77 +185,135 @@ section:nth-child(odd) {
   box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
 }
 
+/* Dark theme styles */
+[data-theme='dark'] {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
 /* Navbar styles */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 1rem 2rem;
-  background-color: var(--bg-lighter);
-  box-shadow: 0 2px 4px rgba(74, 144, 226, 0.1);
+  background-color: rgba(240, 248, 255, 0.97);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
   z-index: 1000;
-  transition: background-color 0.3s ease;
+  transition: all 0.4s ease;
 }
 
-.dark-theme .navbar {
-  background-color: #2a2a2a;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+[data-theme='light'] .navbar {
+  background-color: rgba(240, 248, 255, 0.97);
+  border-bottom: 1px solid var(--border-light);
 }
 
+[data-theme='light'] .navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(74, 144, 226, 0.15);
+}
+
+/* Navbar styles - Dark Theme */
+[data-theme='dark'] .navbar {
+  background-color: rgba(26, 26, 26, 0.97);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .navbar.scrolled {
+  background-color: rgba(18, 18, 18, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Navbar animations and interactions */
 .navbar-title {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--primary-blue);
   text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
-.dark-theme .navbar-title {
+.navbar-title:hover {
+  transform: scale(1.05);
+}
+
+[data-theme='dark'] .navbar-title {
   color: #61dafb;
 }
 
-.theme-toggle {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  padding: 0.5rem;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  cursor: pointer;
-  background-color: var(--bg-lighter);
-  box-shadow: 0 2px 4px rgba(74, 144, 226, 0.1);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
-  color: var(--primary-blue);
-}
-
-.dark-theme .theme-toggle {
-  background-color: #2a2a2a;
-  color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Links */
-a {
-  color: var(--primary-blue);
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--hover-blue);
-}
-
-body,
-.App,
-section,
-.section,
-.navbar,
-.theme-toggle,
-a {
+/* Navigation links animations */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
   transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-blue);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+[data-theme='dark'] .nav-link::after {
+  background-color: #61dafb;
+}
+
+.nav-link:hover {
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .nav-link:hover {
+  color: #61dafb;
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Active link styles */
+.nav-link.active::after {
+  width: 80%;
+}
+
+/* Theme toggle button animations */
+.theme-toggle {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg);
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+[data-theme='dark'] .theme-toggle:hover {
+  background-color: #61dafb;
+  color: #1a1a1a;
+}
+
+/* Mobile menu animations */
+@media (max-width: 768px) {
+  .nav-menu {
+    transform-origin: top;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+  }
+
+  .nav-menu.closed {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  .nav-menu.open {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }

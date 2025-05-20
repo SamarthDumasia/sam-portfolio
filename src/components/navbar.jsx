@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import './navbar.css';  // Update CSS import
+import './Navbar.css';
 
 const Navbar = ({ 
   scrollToHome, 
@@ -23,9 +23,9 @@ const Navbar = ({
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="navbar-container">
-        <ul className="nav-menu">
+    <nav className={`Navbar ${scrolled ? 'Scrolled' : ''}`}>
+      <div className="NavbarContainer">
+        <ul className="NavMenu">
           <li><span onClick={scrollToHome}>Home</span></li>
           <li><span onClick={scrollToAbout}>About</span></li>
           <li><span onClick={scrollToEducation}>Education</span></li>
@@ -38,4 +38,4 @@ const Navbar = ({
   );
 };
 
-export default navbar;
+export default Navbar;

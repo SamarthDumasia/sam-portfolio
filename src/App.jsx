@@ -9,7 +9,7 @@ import Education from './src/sections/Education';
 import Experience from './src/sections/Experience';
 import Projects from './src/sections/Projects';
 import Contact from './src/sections/Contact';
-import { ThemeProvider } from './context/ThemeContext'; // Add ThemeProvider
+import { ThemeProvider } from './src/context/ThemeContext'; // Add ThemeProvider
 import './src/App.css';
 
 function App() {

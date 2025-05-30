@@ -1,16 +1,16 @@
 // src/App.jsx
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from './src/components/Navbar'; // Fix casing and remove .jsx
-import ThemeToggle from './src/components/ThemeToggle';
-import Home from './src/sections/Home';
-import About from './src/sections/About';
-import Education from './src/sections/Education';
-import Experience from './src/sections/Experience';
-import Projects from './src/sections/Projects';
-import Contact from './src/sections/Contact';
-import { ThemeProvider } from './src/context/ThemeContext'; // Add ThemeProvider
-import './src/App.css';
+import Navbar from './components/Navbar';
+import ThemeToggle from './components/ThemeToggle';
+import Home from './sections/Home';
+import About from './sections/About';
+import Education from './sections/Education';
+import Experience from './sections/Experience';
+import Projects from './sections/Projects';
+import Contact from './sections/Contact';
+import { ThemeProvider } from './context/ThemeContext';
+import './App.css';
 
 function App() {
   // Create refs for each section to enable smooth scrolling

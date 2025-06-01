@@ -36,3 +36,6 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Example of correct image import in a component
+import logo from '../assets/mrsamlogo(2).jpeg';

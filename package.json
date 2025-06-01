@@ -2,12 +2,11 @@
   "name": "sam-portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "./",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm install && vite build",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview --port 8080"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

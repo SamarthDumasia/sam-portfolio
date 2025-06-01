@@ -92,8 +92,13 @@
 /* Scrolled state */
 .Navbar.Scrolled {
   height: 60px;
-  background-color: rgba(28, 28, 28, 0.98);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  background-color: #4189d1;
+  box-shadow: 0 0.5px 30px #66b2ff;
+}
+
+[data-theme='dark'] .Navbar.Scrolled {
+  background-color: rgb(0, 26, 55);
+  box-shadow: 0 0.5px 30px #66b2ff;
 }
 
 /* Responsive styles */
@@ -128,3 +133,4 @@
     font-size: 0.85rem;
   }
 }
+

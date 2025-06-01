@@ -37,8 +37,8 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: 'Weather Application',
-      description: 'A weather app that shows forecasts based on user location.',
+      title: 'E-commerce Mushroom Website',
+      description: 'An e-commerce website for selling mushrooms with a user-friendly interface.',
       image: 'https://source.unsplash.com/random/600x400/?weather',
       category: ['javascript', 'api'],
       link: '#',

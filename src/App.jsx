@@ -11,6 +11,7 @@ import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
+import './index.css';
 
 function App() {
   // Create refs for each section to enable smooth scrolling

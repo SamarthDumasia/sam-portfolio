@@ -2,7 +2,7 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar.jsx';
-import ThemeToggle from './components/ThemeToggle';
+import ThemeToggle from './components/ThemeToggle.jsx';
 import Home from './sections/Home';
 import About from './sections/About';
 import Education from './sections/Education';

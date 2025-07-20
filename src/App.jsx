@@ -1,7 +1,7 @@
 // src/App.jsx
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from './components/Navbar.jsx';
+import Navibar from './components/Navibar.jsx';
 import ThemeToggle from './components/ThemeToggle.jsx';
 import Home from './sections/Home';
 import About from './sections/About';
@@ -30,7 +30,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="App" data-theme="light">
-        <Navbar 
+        <Navibar 
           scrollToHome={() => scrollToSection(homeRef)}
           scrollToAbout={() => scrollToSection(aboutRef)}
           scrollToEducation={() => scrollToSection(educationRef)}

@@ -1,0 +1,183 @@
+/* === Glassmorphic, Floating, Innovative Navibar === */
+
+.navibar {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 2.5rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 2.5rem;
+  z-index: 1000;
+  min-width: 320px;
+  max-width: 90vw;
+  transition: box-shadow 0.3s, background 0.3s;
+  animation: navibar-fadein 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes navibar-fadein {
+  from { opacity: 0; transform: translateX(-50%) translateY(-30px) scale(0.95); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+.navibar-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--primary-blue, #4a90e2);
+  margin-right: 2rem;
+  user-select: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navibar-title::before {
+  content: '\1F680'; /* Rocket emoji as logo */
+  font-size: 1.5rem;
+  filter: drop-shadow(0 1px 2px #4a90e2aa);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.nav-link {
+  position: relative;
+  background: none;
+  border: none;
+  font: inherit;
+  color: #1e3a5f;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.15s;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nav-link:focus-visible {
+  box-shadow: 0 0 0 3px #4a90e2aa;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0.3rem;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4a90e2 0%, #61dafb 100%);
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1), left 0.3s;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: #61dafb;
+  background: rgba(74, 144, 226, 0.08);
+  transform: translateY(-2px) scale(1.07);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+/* Ripple effect on click */
+.nav-link:active::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120%;
+  height: 120%;
+  background: rgba(97, 218, 251, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  animation: ripple 0.4s linear;
+  z-index: 0;
+}
+
+@keyframes ripple {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(0.7); }
+  to { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+}
+
+/* Animated indicator for active link */
+.nav-menu .nav-indicator {
+  position: absolute;
+  bottom: 0.1rem;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #4a90e2 0%, #61dafb 100%);
+  transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), width 0.4s;
+  z-index: 3;
+}
+
+@media (max-width: 900px) {
+  .navibar {
+    padding: 0.5rem 1rem;
+    min-width: 220px;
+  }
+  .navibar-title {
+    margin-right: 1rem;
+    font-size: 1.1rem;
+  }
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navibar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: unset;
+    max-width: 100vw;
+    padding: 0.5rem 0.5rem;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1.5rem;
+  }
+  .navibar-title {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .nav-menu {
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.5rem;
+  }
+}
+
+/* Remove FAB and sheet */
+.navibar-mobile-fab, .navibar-mobile-sheet { display: none !important; } 

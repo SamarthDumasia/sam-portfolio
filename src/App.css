@@ -164,12 +164,6 @@ section:nth-child(odd) {
   box-shadow: 0 4px 8px rgba(74, 144, 226, 0.1);
 }
 
-[data-theme='light'] .navbar {
-  background-color: rgba(240, 248, 255, 0.97);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-light);
-}
-
 [data-theme='light'] .contact-form input,
 [data-theme='light'] .contact-form textarea {
   background-color: white;
@@ -192,7 +186,7 @@ section:nth-child(odd) {
 }
 
 /* Navbar styles */
-.navbar {
+.navibar {
   position: fixed;
   top: 0;
   width: 100%;
@@ -204,29 +198,29 @@ section:nth-child(odd) {
   transition: all 0.4s ease;
 }
 
-[data-theme='light'] .navbar {
+[data-theme='light'] .navibar {
   background-color: rgba(240, 248, 255, 0.97);
   border-bottom: 1px solid var(--border-light);
 }
 
-[data-theme='light'] .navbar.scrolled {
+[data-theme='light'] .navibar.scrolled {
   background-color: rgba(255, 255, 255, 0.98);
   box-shadow: 0 4px 20px rgba(74, 144, 226, 0.15);
 }
 
 /* Navbar styles - Dark Theme */
-[data-theme='dark'] .navbar {
+[data-theme='dark'] .navibar {
   background-color: rgba(26, 26, 26, 0.97);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme='dark'] .navbar.scrolled {
+[data-theme='dark'] .navibar.scrolled {
   background-color: rgba(18, 18, 18, 0.98);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Navbar animations and interactions */
-.navbar-title {
+.navibar-title {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--primary-blue);
@@ -234,11 +228,11 @@ section:nth-child(odd) {
   transition: transform 0.3s ease;
 }
 
-.navbar-title:hover {
+.navibar-title:hover {
   transform: scale(1.05);
 }
 
-[data-theme='dark'] .navbar-title {
+[data-theme='dark'] .navibar-title {
   color: #61dafb;
 }
 
